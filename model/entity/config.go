@@ -1,8 +1,9 @@
 package entity
 
 type Config struct {
-	Sast   SastConfig   `json:"sast" bson:"sast,omitempty" binding:"required"`
-	School SchoolConfig `json:"school" bson:"school,omitempty" binding:"required"`
+	Sast    SastConfig    `json:"sast" bson:"sast,omitempty" binding:"required"`
+	School  SchoolConfig  `json:"school" bson:"school,omitempty" binding:"required"`
+	Setting SettingConfig `json:"setting" bson:"setting,omitempty" binding:"required"`
 }
 
 type SastConfig struct {
@@ -36,4 +37,8 @@ type MajorConfig struct {
 	MajorId   string   `json:"majorId" bson:"majorId,omitempty" binding:"required"`
 	MajorName string   `json:"majorName" bson:"majorName,omitempty" binding:"required"`
 	ClassList []string `json:"classList" bson:"classList,omitempty" binding:"required"`
+}
+
+type SettingConfig struct {
+	IsShowResult bool `json:"isShowResult" bson:"isShowResult,omitempty" binding:"required"`
 }
